@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: cadetblue;
+}
+
+.liked {
+  width: 150px;
+  border: 2px solid green;
+  border-radius: 5px;
+}
+
+.notLiked {
+  width: 150px;
+  border: 2px solid red;
+  border-radius: 5px;
+}
+
+.characterContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 90%;
+  margin: 10px auto;
+}
+
+.info {
+  width: 50%;
+  margin: 10% 0;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.info {
+  text-align: center;
+}
+
+.noOfLikes {
+  text-align: center;
+  margin: 20px;
+}
