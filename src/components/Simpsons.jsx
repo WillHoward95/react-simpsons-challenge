@@ -14,7 +14,8 @@ class Simpsons extends Component {
               key={item.quote + index}
               onDelete={this.props.onDelete}
               index={index}
-              noOfLikes={this.props.noOfLikes}
+              likeAdd={this.props.likeAdd}
+              likeSubtract={this.props.likeSubtract}
             />
           );
         })}

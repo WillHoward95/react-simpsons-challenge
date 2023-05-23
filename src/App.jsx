@@ -5,7 +5,7 @@ import Simpsons from "./components/Simpsons";
 import "./App.css";
 
 class App extends Component {
-  state = { noOfLikes: 5 };
+  state = { noOfLikes: 0 };
 
   async componentDidMount() {
     const { data } = await axios.get(
@@ -18,6 +18,14 @@ class App extends Component {
     const copy = [...this.state.simpsons];
     copy.splice(index, 1);
     this.setState({ simpsons: copy });
+  };
+
+  likeSubtract = () => {
+    this.setState({ noOfLikes: this.state.noOfLikes - 1 });
+  };
+
+  likeAdd = () => {
+    this.setState({ noOfLikes: this.state.noOfLikes + 1 });
   };
 
   render() {
@@ -33,7 +41,8 @@ class App extends Component {
         <Simpsons
           simpsons={simpsons}
           onDelete={this.onDelete}
-          noOfLikes={this.state.noOfLikes}
+          likeAdd={this.likeAdd}
+          likeSubtract={this.likeSubtract}
         />
       </>
     );

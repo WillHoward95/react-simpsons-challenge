@@ -9,7 +9,11 @@ class Character extends Component {
 
   onLikeToggle = () => {
     this.setState({ like: !this.state.like });
-    this.setState({ noOfLikes: this.props.noOfLikes + 1 });
+    if (this.state.like) {
+      this.props.likeSubtract();
+    } else {
+      this.props.likeAdd();
+    }
   };
 
   render() {
@@ -39,7 +43,6 @@ class Character extends Component {
           </div>
           <div>
             <Image image={image} like={like} />
-            <p>Facing {characterDirection}</p>
           </div>
         </div>
       );
@@ -49,7 +52,6 @@ class Character extends Component {
       <div className="characterContainer">
         <div>
           <Image image={image} like={like} />
-          <p>Facing {characterDirection}</p>
         </div>
         <div className="info">
           <Name character={character} like={like} />
